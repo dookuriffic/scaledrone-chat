@@ -1,0 +1,101 @@
+<title>Khan Academy Login</title>
+<link rel="shortcut icon" href="https://cdn.glitch.global/db07057f-b330-496c-9a2e-636bb4c20b17/download.png?v=1652103093015" />
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+        
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    
+
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+
+    .message {
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+    .message-form__button {
+      margin: 10px;
+    }
+  </style>
+  
+  <script>
+    
+    var color = red;
+    var name = "Unknown";
+    
+    function updateColor (element) {
+      color = document.getElementById("colorBox").value;
+      color = color.replace("#", "");
+      updateLink();
+    }
+    
+    function updateName(){
+      name = document.getElementById("nameBox").value;
+      updateLink();
+    }
+        
+    function updateLink(){
+      document.getElementById("chatLink").href="https://khan-academy-sams.glitch.me/chat.html?color="+color+"&name="+name+"&somethingelse=234";
+    }
+    
+  </script>
+  
+</head>
+<body>
+    <!-- input class="message-form__input" placeholder="Say Something..." type="text"/ -->
+    <!-- input type="image" src="https://cdn.glitch.me/1f224aa3-3e2d-449b-bb9f-374c1c426af1%2F11bb25fc-c49c-4071-9153-0ba0e080e1da.image.png?v=1635368084243"  class="message-form__button"/ -->
+
+    <div>Choose a color <input id="colorBox" onchange="updateColor(this)" type="color"></div>
+    <br>
+
+</br>
+    <div>Enter your name <input id="nameBox" onchange="updateName()" type="text"></div>
+  </br><br>
+<font size="+2"><a href="" id="chatLink">Go Chat!</a></font>
+
+
+</body>
+</html>
